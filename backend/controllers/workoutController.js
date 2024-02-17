@@ -17,8 +17,9 @@ const getWorkout = async (req, res) => {
         return res.status(404).json({ error: 'no such workout' })
     }
 
-    res.status(200).json(getWorkouts)
+    res.status(200).json(workout)
 }
+
 
 //create new workout
 const createWorkout = async (req, res) => {
