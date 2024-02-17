@@ -2,7 +2,9 @@ const express = require('express')
 const {
     createWorkout,
     getWorkouts,
-    getWorkout
+    getWorkout,
+    deleteWorkout,
+    updateWorkout
 } = require('../controllers/workoutController')
 const { create } = require('../models/workoutModel')
 const router = express.Router()
@@ -12,12 +14,7 @@ router.get('/:id', getWorkout)
 
 router.post('/', createWorkout)
 
-router.delete('/:id', (req, res) => {
-    res.json({ mssg: 'delete a workout' })
-})
+router.delete('/:id', deleteWorkout)
 
-router.patch('/:id', (req, res) => {
-
-    res.json({ mssg: 'update a workout' })
-})
+router.patch('/:id', updateWorkout)
 module.exports = router
